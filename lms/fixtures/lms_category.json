@@ -1,0 +1,114 @@
+[
+ {
+  "category": "Phishing & Social Engineering",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:17:48.433743",
+  "name": "Phishing & Social Engineering"
+ },
+ {
+  "category": "Password & Authentication",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:18:13.108428",
+  "name": "Password & Authentication"
+ },
+ {
+  "category": "Endpoint & Remote Working",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:19:27.247761",
+  "name": "Endpoint & Remote Working"
+ },
+ {
+  "category": "Incident Response",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:19:46.055253",
+  "name": "Incident Response"
+ },
+ {
+  "category": "Management & Governance",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:20:11.559470",
+  "name": "Management & Governance"
+ },
+ {
+  "category": "Application Security",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:20:59.235269",
+  "name": "Application Security"
+ },
+ {
+  "category": "Web Development",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2024-09-20 12:58:16.841571",
+  "name": "Web Development"
+ },
+ {
+  "category": "Business",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2024-09-20 12:58:32.304850",
+  "name": "Business"
+ },
+ {
+  "category": "Design",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2024-09-20 12:59:12.621022",
+  "name": "Design"
+ },
+ {
+  "category": "Personal Development",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2024-09-20 12:59:19.287404",
+  "name": "Personal Development"
+ },
+ {
+  "category": "Finance",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2024-09-20 12:58:28.579714",
+  "name": "Finance"
+ },
+ {
+  "category": "Frontend",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2024-05-08 14:05:16.979275",
+  "name": "Frontend"
+ },
+ {
+  "category": "Framework",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2023-06-15 18:01:41.598282",
+  "name": "Framework"
+ },
+ {
+  "category": "Data Protection & Privacy",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:19:09.779920",
+  "name": "Data Protection & Privacy"
+ },
+ {
+  "category": "General Cybersecurity",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-23 20:15:00.904896",
+  "name": "General Cybersecurity"
+ },
+ {
+  "category": "Security",
+  "docstatus": 0,
+  "doctype": "LMS Category",
+  "modified": "2026-09-19 16:10:46.087839",
+  "name": "Security"
+ }
+]
