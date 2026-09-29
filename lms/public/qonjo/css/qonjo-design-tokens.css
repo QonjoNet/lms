@@ -1,0 +1,87 @@
+/* QONJO design tokens - approved cyan / blue / indigo / violet identity.
+   No font files are bundled. Install or load Inter and Noto Sans Ethiopic separately.
+   Cyan is decorative on light surfaces; Blue is the accessible main action color. */
+:root {
+  color-scheme: light;
+  --q-navy: #0B132B;
+  --q-indigo: #4F46E5;
+  --q-blue: #2563EB;
+  --q-cyan: #06B6D4;
+  --q-violet: #7C3AED;
+  --q-paper: #F8FAFF;
+  --q-ice: #E2E8F0;
+  --q-slate: #475569;
+  --q-muted-palette: #94A3B8;
+  --q-white: #FFFFFF;
+  --q-bg: #FFFFFF;
+  --q-surface: #F8FAFF;
+  --q-surface-raised: #FFFFFF;
+  --q-text: #0B132B;
+  --q-text-secondary: #475569;
+  --q-border: #E2E8F0;
+  --q-action: #2563EB;
+  --q-action-hover: #1D4ED8;
+  --q-on-action: #FFFFFF;
+  --q-link: #2563EB;
+  --q-focus: #2563EB;
+  --q-brand-gradient: linear-gradient(135deg,#06B6D4 0%,#2563EB 52%,#7C3AED 100%);
+  --q-font: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --q-font-am: 'Noto Sans Ethiopic', 'Nyala', sans-serif;
+  --q-weight-regular: 400;
+  --q-weight-medium: 500;
+  --q-weight-heading: 600;
+  --q-size-caption: .8125rem;
+  --q-size-small: .9375rem;
+  --q-size-body: 1rem;
+  --q-size-lead: 1.25rem;
+  --q-size-h3: 1.5rem;
+  --q-size-h2: clamp(1.875rem, 3vw, 2.75rem);
+  --q-size-h1: clamp(2.75rem, 5.5vw, 4.75rem);
+  --q-leading-body: 1.6;
+  --q-leading-heading: 1.08;
+  --q-space-1: .25rem;
+  --q-space-2: .5rem;
+  --q-space-3: .75rem;
+  --q-space-4: 1rem;
+  --q-space-6: 1.5rem;
+  --q-space-8: 2rem;
+  --q-space-12: 3rem;
+  --q-space-16: 4rem;
+  --q-space-24: 6rem;
+  --q-radius-sm: .375rem;
+  --q-radius-md: .75rem;
+  --q-radius-lg: 1.25rem;
+  --q-shadow: 0 14px 40px rgb(11 19 43 / 7%);
+  --q-container: 74rem;
+  --q-motion-fast: 140ms;
+  --q-motion-normal: 240ms;
+}
+[data-theme='dark'] {
+  color-scheme: dark;
+  --q-bg: #0B132B;
+  --q-surface: #121E3B;
+  --q-surface-raised: #192747;
+  --q-text: #F8FAFF;
+  --q-text-secondary: #CBD5E1;
+  --q-border: #334155;
+  --q-link: #67E8F9;
+  --q-focus: #67E8F9;
+  --q-shadow: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--q-bg); color: var(--q-text); font-family: var(--q-font); line-height: var(--q-leading-body); }
+:lang(am) { font-family: var(--q-font-am); }
+a { color: var(--q-link); text-underline-offset: .2em; }
+button, input, textarea, select { font: inherit; }
+:where(a,button,input,textarea,select):focus-visible { outline: 3px solid var(--q-focus); outline-offset: 4px; }
+.q-container { width: min(var(--q-container), calc(100% - 3rem)); margin-inline: auto; }
+.q-button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .65rem 1.25rem; border: 1px solid transparent; border-radius: var(--q-radius-sm); background: var(--q-action); color: var(--q-on-action); font-weight: 600; text-decoration: none; cursor: pointer; }
+.q-button:hover { background: var(--q-action-hover); }
+.q-button--secondary { color: var(--q-text); border-color: var(--q-border); background: transparent; }
+.q-button--secondary:hover { background: var(--q-surface); }
+.q-card { padding: var(--q-space-8); background: var(--q-surface); border: 1px solid var(--q-border); border-radius: var(--q-radius-lg); }
+.q-kicker { font-size: var(--q-size-caption); color: var(--q-link); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.q-h1 { font-size: var(--q-size-h1); line-height: var(--q-leading-heading); letter-spacing: -.045em; font-weight: 600; }
+.q-h2 { font-size: var(--q-size-h2); line-height: 1.15; letter-spacing: -.03em; }
+.q-lead { font-size: var(--q-size-lead); color: var(--q-text-secondary); max-width: 42rem; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
