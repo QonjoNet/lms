@@ -16,7 +16,8 @@ def get_context(context):
         context.is_logged_in = False
         
     # Force all social logins to return to the 'login' page so we can handle routing via JS/Jinja
+    # We pass ?redirect-to=login so Frappe's core logic doesn't aggressively redirect admins to /app before our JS runs
     for provider in context.get("provider_logins", []):
-        provider["auth_url"] = get_oauth2_authorize_url(provider["name"], "login")
+        provider["auth_url"] = get_oauth2_authorize_url(provider["name"], "/login?redirect-to=login")
         
     return context
