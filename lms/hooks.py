@@ -184,6 +184,8 @@ override_whitelisted_methods = {
 
 # Add all simple route rules here
 website_route_rules = [
+	{"from_route": "/login", "to_route": "qonjo_login"},
+	{"from_route": "/app", "to_route": "qonjo_app"},
 	{"from_route": f"/{get_lms_path()}/<path:app_path>", "to_route": "_lms"},
 	{"from_route": f"/{get_lms_path()}", "to_route": "_lms"},
 	{
