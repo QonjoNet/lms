@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0B132B">
+<title>Welcome to Qonjo Learn | QONJO</title>
+<link rel="icon" href="/assets/lms/qonjo/brand/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/lms/qonjo/css/qonjo-design-tokens.css">
+<link rel="stylesheet" href="/assets/lms/qonjo/css/experience.css">
+<script>localStorage.setItem('qonjo.theme', 'dark');</script>
+<script src="/assets/lms/qonjo/js/config.js"></script>
+<script src="/assets/lms/qonjo/js/icons.js" defer></script>
+<script src="/assets/lms/qonjo/js/core.js" defer></script>
+<style>
+.form-group label { display: block; margin-bottom: 0.5rem; color: var(--text-secondary); font-size: 0.875rem; }
+.form-group input { width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); background: var(--input-bg); color: var(--text-primary); margin-bottom: 1rem; }
+.form-group input:focus { outline: none; border-color: var(--accent-color); }
+</style>
+</head>
+<body data-page="gateway" data-service-id="learn">
+<main class="gateway-layout" id="main">
+<aside class="gateway-brand learn-brand">
+<a class="brand" href="/" data-home aria-label="Qonjo home">
+<img src="/assets/lms/qonjo/brand/logo-reverse.svg" alt="QONJO, works beautifully" width="172" height="63" data-reverse="true">
+</a>
+<div class="gateway-orb orb-a"></div>
+<div class="gateway-orb orb-b"></div>
+<div class="gateway-story">
+<div class="eyebrow"><span class="eyebrow-line"></span>YOUR LEARNING SPACE</div>
+<h1>A little learning.<br>A world of possibility.</h1>
+<p>Build your skills. Find your rhythm. Make room for what’s next.</p>
+<div class="gateway-art">
+<div class="gateway-art-ring"></div>
+<img src="/assets/lms/qonjo/brand/QONJO_Symbol.svg" alt="" width="160" height="160">
+<span class="art-node node-left"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h6a4 4 0 0 1 4 4v13a4 4 0 0 0-4-3H3V4Zm18 0h-5a3 3 0 0 0-3 3v14a4 4 0 0 1 4-3h4V4Z"/></svg></span>
+<span class="art-node node-right"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg></span>
+</div>
+<div class="gateway-features">
+<span>Learning at your own pace</span>
+<span>Everyday confidence, built in</span>
+<span>Progress you can come back to</span>
+</div>
+</div>
+</aside>
+<section class="gateway-form-section">
+<div class="gateway-top-links">
+<button class="icon-btn theme-toggle" aria-label="Switch to dark theme"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13a9 9 0 0 1-10-10 9 9 0 1 0 10 10Z"/></svg></button>
+</div>
+<div class="auth-card">
+<span class="auth-domain"> learn.qonjo.net</span>
+<div class="auth-title">
+<h2>Welcome to<br>Qonjo Learn.</h2>
+<p>Sign in to your learning space.</p>
+</div>
+
+<form class="form-login">
+<div class="form-group">
+<label for="login_email">Email or Username</label>
+<input id="login_email" name="usr" type="text" placeholder="jane@example.com or Administrator" required autofocus>
+</div>
+<div class="form-group">
+<label for="login_password">Password</label>
+<input id="login_password" name="pwd" type="password" placeholder="••••••••" required>
+</div>
+<p class="field-error" id="login-error" role="alert" style="color: #ff4b4b; display: none; margin-bottom: 1rem; font-size: 0.875rem;">Invalid login credentials.</p>
+<button class="btn btn-primary full-width btn-login" type="submit">Sign in to Qonjo <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+</form>
+
+{% if social_login %}
+<div class="social-logins" style="margin-top: 1.25rem;">
+<div style="display: flex; align-items: center; margin: 1rem 0; color: rgba(255, 255, 255, 0.6); font-size: 0.8rem;">
+<span style="flex: 1; border-bottom: 1px solid rgba(255, 255, 255, 0.12);"></span>
+<span style="padding: 0 10px;">or continue with</span>
+<span style="flex: 1; border-bottom: 1px solid rgba(255, 255, 255, 0.12);"></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 0.5rem;">
+{% for provider in provider_logins %}
+<a href="{{ provider.auth_url }}" class="btn-social" style="display: flex; align-items: center; justify-content: center; gap: 12px; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.15); color: #f8fafc; text-decoration: none; font-weight: 500; font-size: 0.9375rem; background: rgba(255, 255, 255, 0.06); backdrop-filter: blur(10px); transition: all 0.2s ease;">
+{% if provider.icon %}<span style="display: flex; align-items: center; width: 20px; height: 20px;">{{ provider.icon }}</span>{% endif %}
+<span>Continue with {{ provider.provider_name }}</span>
+</a>
+{% endfor %}
+</div>
+</div>
+{% endif %}
+
+</div>
+<div class="gateway-bottom">
+<span>QONJO &middot; works beautifully</span>
+</div>
+</section>
+</main>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector('.form-login');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const btn = document.querySelector('.btn-login');
+        const err = document.getElementById('login-error');
+        btn.disabled = true;
+        btn.innerHTML = 'Signing in...';
+        err.style.display = 'none';
+        
+        fetch('/api/method/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Frappe-CSRF-Token': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({
+                usr: document.getElementById('login_email').value,
+                pwd: document.getElementById('login_password').value
+            })
+        })
+        .then(async r => {
+            const data = await r.json();
+            if (data.message === "Logged In") {
+                const redirect = new URLSearchParams(window.location.search).get('redirect-to');
+                if (redirect) {
+                    window.location.href = decodeURIComponent(redirect);
+                } else {
+                    window.Q.modal(`
+                        <div class="eyebrow">A good place to begin</div>
+                        <h2 id="dialog-title">Where are we heading?</h2>
+                        <p>Choose the space for the work you have in mind.</p>
+                        
+                        <a class="dialog-workspace" href="/lms">
+                            <span class="square-icon cyan"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg></span>
+                            <div><h3>Qonjo Learn</h3><p>Student Dashboard</p></div>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                        </a>
+                        
+                        <a class="dialog-workspace" href="/app/build">
+                            <span class="square-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+                            <div><h3>Framework</h3><p>Administrative Tools</p></div>
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+                        </a>
+                    `);
+                }
+            } else {
+                throw new Error("Invalid");
+            }
+        })
+        .catch(e => {
+            err.style.display = 'block';
+            btn.disabled = false;
+            btn.innerHTML = 'Sign in to Qonjo <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>';
+        });
+    });
+});
+</script>
+<dialog class="dialog" id="global-dialog" aria-labelledby="dialog-title">
+<button class="icon-btn dialog-close" aria-label="Close dialog" data-close-dialog><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg></button>
+<div id="dialog-content"></div>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="/assets/lms/qonjo/js/gateway.js" defer></script>
+</body>
+</html>
