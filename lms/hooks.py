@@ -26,8 +26,8 @@ def get_lms_path():
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/lms/css/lms.css"
-# app_include_js = "/assets/lms/js/lms.js"
+app_include_css = "/assets/lms/css/navbar_fix.css"
+app_include_js = "/assets/lms/js/sidebar_logout_v3.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/lms/css/lms.css"

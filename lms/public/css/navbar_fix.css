@@ -1,0 +1,57 @@
+/*
+ * Fix: Navbar user dropdown being clipped/hidden behind page content.
+ * The avatar "A" dropdown (Log out, Settings, etc.) was invisible because
+ * parent elements had overflow restrictions. This forces all ancestors
+ * of the dropdown to allow visible overflow.
+ */
+
+/* Force the sticky-top wrapper to not clip its children */
+.sticky-top {
+    z-index: 10500 !important;
+    overflow: visible !important;
+    contain: none !important;
+}
+
+/* Force the navbar itself to allow overflow */
+header.navbar {
+    overflow: visible !important;
+}
+
+/* Force the container inside navbar to allow overflow */
+header.navbar > .container {
+    overflow: visible !important;
+}
+
+/* Force the navbar-collapse to allow overflow */
+.navbar .collapse.navbar-collapse {
+    overflow: visible !important;
+}
+
+/* Force the navbar-nav (the ul holding dropdowns) to allow overflow */
+.navbar .navbar-nav {
+    overflow: visible !important;
+}
+
+/* Ensure the dropdown menu itself has high z-index and is visible */
+.dropdown-navbar-user .dropdown-menu,
+#toolbar-user {
+    z-index: 10600 !important;
+    overflow: visible !important;
+}
+
+/* Ensure the nav-item dropdown is not clipped */
+.navbar .nav-item.dropdown {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* Make sure page-container doesn't clip the navbar dropdown */
+#page-container {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/* The main body-side-section might also clip */
+.body-side-section {
+    overflow: visible !important;
+}
