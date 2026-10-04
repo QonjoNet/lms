@@ -29,7 +29,7 @@
 							v-if="item.icon"
 							:class="[item.icon, 'size-4 text-ink-gray-6']"
 						/>
-						<div v-safe-html:rich="item.title"></div>
+						<div class="text-ink-gray-8" v-safe-html:rich="item.title"></div>
 					</div>
 					<div v-if="item.modified" class="text-ink-gray-5">
 						{{ dayjs.unix(item.modified).fromNow(true) }}
